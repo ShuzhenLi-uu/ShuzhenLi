@@ -1,0 +1,322 @@
+\documentclass[11pt,a4paper]{article}
+
+% ─── Packages ───────────────────────────────────────────────
+\usepackage[margin=2.2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{marvosym}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% ─── Colors ─────────────────────────────────────────────────
+\definecolor{navy}{HTML}{18324A}
+\definecolor{burgundy}{HTML}{7A1F2B}
+\definecolor{muted}{HTML}{6E6E6E}
+
+% ─── Hyperref ───────────────────────────────────────────────
+\hypersetup{
+  colorlinks=true,
+  linkcolor=navy,
+  urlcolor=navy,
+  pdfauthor={Shuzhen Li},
+  pdftitle={Curriculum Vitae -- Shuzhen Li}
+}
+
+% ─── Section formatting ────────────────────────────────────
+\titleformat{\section}
+  {\large\bfseries\color{navy}\scshape}
+  {}{0em}{}
+  [\vspace{1pt}{\color{navy}\titlerule}]
+
+\titlespacing*{\section}{0pt}{1em}{0.4em}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{navy}}
+  {}{0em}{}
+
+\titlespacing*{\subsection}{0pt}{0.7em}{0.25em}
+
+% ─── Footer ─────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfoot[C]{
+\small\color{muted}
+Shuzhen Li
+\enspace$\cdot$\enspace
+Curriculum Vitae
+\enspace$\cdot$\enspace
+\thepage/\pageref{LastPage}
+}
+
+% ─── Spacing ────────────────────────────────────────────────
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ─── Custom commands ────────────────────────────────────────
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+% CV entry
+\newcommand{\cventry}[5]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    {\textbf{\color{burgundy}#1}} &
+    {\small\color{muted}#4} \\
+
+    {\textcolor{black}{#2}} &
+    {\small\color{muted}#3}
+  \end{tabularx}
+
+  \if\relax\detokenize{#5}\relax
+  \else
+    \vspace{3pt}
+    {\small #5}
+  \fi
+
+  \par\vspace{10pt}
+}
+
+% Conference lines
+\newcommand{\confline}[4]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textcolor{burgundy}{#2} &
+    {\small\color{muted}#1} \\
+
+    {\small #3 \enspace$\cdot$\enspace
+    \textcolor{navy}{#4}} &
+  \end{tabularx}
+
+  \par\vspace{5pt}
+}
+
+% Paper command
+\newcommand{\cvpaper}[3]{%
+  {\textbf{\color{burgundy}#1}}\\
+  {\small\color{muted}#2}\\[2pt]
+  {\small #3}\\[3pt]
+}
+
+\renewcommand{\labelitemi}{$\cdot$}
+
+% ─── Document ───────────────────────────────────────────────
+\begin{document}
+
+% ═══════ HEADER ═══════════════════════════════════════════════
+\begin{center}
+
+{\Huge\bfseries\color{navy} Shuzhen Li}\\[8pt]
+
+{\large PhD Candidate in Finance, Utrecht University School of Economics}\\[6pt]
+
+{\small
+\Letter\enspace
+\href{mailto:s.li3@uu.nl}{s.li3@uu.nl}
+\quad$\cdot$\quad
+\Mobilefone\enspace +31\,6\,27497398
+\quad$\cdot$\quad
+Utrecht, the Netherlands
+}
+
+\end{center}
+
+% ═══════ RESEARCH FIELDS ══════════════════════════════════════
+\section{Research Fields}
+
+Behavioural and Experimental Economics; Behavioural Finance; Sustainable Finance; Economics of Artificial Intelligence and Technology Adoption.
+
+% ═══════ EDUCATION ════════════════════════════════════════════
+\section{Education}
+
+\cventry
+{PhD in Finance}
+{Utrecht University School of Economics, Utrecht University}
+{Utrecht, the Netherlands}
+{Nov 2023 -- Nov 2027 (Expected)}
+{
+Supervisors: Dr.\ Yilong Xu, Dr.\ Paul van Bruggen, and Prof.\ Kees Koedijk.
+}
+
+\cventry
+{MSc in Behavioural Economics}
+{China Center for Behavioral Economics and Finance, Southwestern University of Finance and Economics (SWUFE)}
+{Chengdu, China}
+{Sep 2020 -- Jun 2023}
+{
+\textcolor{burgundy}{Thesis:}
+``The Effects of Hypothetical Knowledge and Actual Knowledge on the Monty Hall Problem.''\\
+Supervisor: Prof.\ Soo Hong Chew.
+}
+
+\cventry
+{Double Bachelor's Degree in Management and Economics}
+{School of Business Administration, Southwestern University of Finance and Economics (SWUFE)}
+{Chengdu, China}
+{Sep 2016 -- Jun 2020}
+{
+\textcolor{burgundy}{Finance Thesis:}
+``The Impact of Green Credit on Asset Quality of Commercial Banks.''\\
+Supervisor: Dr.\ Daxin Dong.
+
+\textcolor{burgundy}{Management Thesis:}
+``Network Embedding and Value Co-creation on Bilibili.''\\
+Supervisor: Dr.\ Lifang Gao.
+}
+
+% ═══════ WORKING PAPERS ═══════════════════════════════════════
+\section{Work in Progress}
+
+\cvpaper
+{Misplaced Optimism: Beliefs and Behaviours outside AI's Jagged Technological Frontier}
+{with Prof.\ Oliver Hauser and Dr.\ Yilong Xu}
+{\textbf{Abstract}: Generative AI exemplifies a broader challenge in technology adoption: benefits are unevenly distributed across tasks and workers, forming a "jagged frontier." Managers must decide how and for whom to deploy such technologies while still learning about their effects. We study whether managers perceive this frontier and allocate the technology efficiently. In two linked experiments, workers complete tasks spanning the frontier while managers estimate the technology's effects and make incentivized deployment decisions. Workers exhibit a sharply jagged frontier—lower-tier workers gain most inside the frontier and lose most outside it—but managers perceive a much smoother one. Task-by-task feedback reduces overoptimism uniformly, correcting the level but not the shape of beliefs. A salience-based information intervention, by contrast, improves allocation decisions across the worker distribution. Realizing gains from new technologies depends not only on capability but on information environments that make its boundaries visible.}
+
+\cvpaper
+{Beyond Returns: Probing the Resilience of Sustainability Preferences}
+{with Dr.\ Peiran Jiao, Prof.\ Kees Koedijk, and Dr.\ Yilong Xu}
+{\textbf{Abstract}: Socially responsible investment has grown rapidly, yet whether this demand reflects genuine non-pecuniary preferences or expectations of outperformance remains debated. We investigate whether sustainability preferences persist when sustainable investments "backfire" financially. In an online experiment, participants allocate between two real historical US equity funds in which the sustainable fund significantly underperforms, under a 2 $\times$ 2 design manipulating sustainability labelling and information presentation (descriptive versus simulated demo-account experience). Sustainability labels raise allocations to the underperforming fund by 30--35\% in relative terms, and this premium persists across 45 incentivized periods of accumulating losses. The persistence reflects preferences rather than beliefs. Demo-account reduces initial overcommitment by 62\% and decision volatility, helping investors better understand their sustainability preferences.}
+
+\cvpaper
+{Sustainable Decisions Under the Veil of Ignorance}
+{with Prof.\ Oliver Hauser and Dr.\ Yilong Xu}
+{\textbf{Abstract}: Global efforts to combat climate change are often hindered by conflicting national interests and economic disparities, making fair resource allocation a persistent challenge. The Veil of Ignorance, a framework proposed by John Rawls, elicits individuals' impartial fairness preferences by removing personal biases. This study applies the Veil of Ignorance in an experimental setting to examine how individuals allocate resources across generations and productivity levels, and assesses its impact on fairness in decision-making. Results show that when participants know their assigned roles, they allocate resources in a self-serving manner. In contrast, participants who make decisions without knowledge of their roles allocate resources more equally across periods and positions, aligning more closely with fairness principles. These findings suggest that differences in allocation behavior arise not from disagreements over fairness norms but from strategic deviations when self-interest is at stake.}
+
+% ═══════ PUBLICATIONS ═════════════════
+\section{Working Papers}
+\cvpaper
+{Collective Evidence on Behavioral Interventions Targeting Carbon Pricing Support}
+{with Yilong Xu and Juergen Huber et al.\,\,$\cdot$\,\,\textit{Revise and Resubmit, Nature Human Behaviour}}
+{\textbf{Abstract}: A large-scale many-designs collaboration evaluating behavioral interventions to raise public support for carbon-pricing policies, implemented across 55 independent experimental designs. As one of the participating teams, we are interested in the following question: although carbon taxes benefit most households through rebates, public support remains low, in part because people poorly understand how rebates are distributed. Dr.\ Yilong Xu and I contribute an experiment testing whether detailed information about the costs and benefits of a carbon tax---especially the rebate distribution---increases stated support for the policy and the likelihood of choosing the green product in an incentivized choice task. The many-designs framework enables systematic comparison across heterogeneous contexts, yielding robust evidence on which interventions translate into real-world policy support.}
+
+% ═══════ CONFERENCES, WORKSHOPS, AND SEMINARS ═════════════════
+\section{Conferences}
+
+\subsection{2026}
+
+\confline
+{Apr 2026}
+{Symposium on Behavioural AI in Education, Work, and Decision-Making}
+{ESSCA School of Management, Paris, France}
+{Presentation: Misplaced Optimism: Beliefs and Behaviours outside AI's Jagged Technological Frontier}
+
+\confline
+{Jun 2026}
+{3rd Annual Conference of the Network of Behavioural and Experimental Economists}
+{University of Exeter, United Kingdom}
+{Presentation: Misplaced Optimism: Beliefs and Behaviours outside AI's Jagged Technological Frontier}
+
+\confline
+{Jun 2026}
+{Foundations of Utility and Risk Conference (FUR)}
+{University of Alicante, Spain}
+{Presentation: Beyond Returns: Probing the Resilience of Sustainability Preferences}
+
+\subsection{2025}
+
+\confline
+{Jun 2025}
+{17th Maastricht Behavioural and Experimental Economics Symposium (M-BEES)}
+{Maastricht University, the Netherlands}
+{Presentation: Sustainable Decisions Under the Veil of Ignorance}
+
+\confline
+{Jun 2025}
+{3rd European Sustainable Finance PhD Workshop}
+{ESCP Business School (Turin), Italy}
+{Presentation: Beyond Returns: Probing the Resilience of Sustainability Preferences}
+
+\confline
+{Sep 2025}
+{Utrecht University Alumni Network Event}
+{The Hague, the Netherlands}
+{Public Lecture: Investing in Green}
+
+\subsection{2024}
+
+\confline
+{Feb 2024}
+{Internal Seminar}
+{Utrecht University, the Netherlands}
+{Presentation: Beyond Returns: Probing the Resilience of Sustainability Preferences}
+
+\confline
+{Mar 2024}
+{Experimental Sustainable Finance Symposium}
+{Radboud University, the Netherlands}
+{Participant}
+
+\confline
+{Jun 2024}
+{Experimental Finance Conference}
+{University of Stavanger, Norway}
+{Participant}
+
+% ═══════ PROFESSIONAL TRAINING ════════════════════════════════
+\section{Professional Training}
+
+\confline
+{2026}
+{Designing Field Experiments}
+{IGL Masterclass Series}
+{Online}
+
+\confline
+{2024}
+{Experimental Finance Summer School}
+{Society for Experimental Finance}
+{University of Stavanger, Norway}
+
+\confline
+{2024}
+{Financial Economics of Climate and Sustainability}
+{Global PhD Course}
+{Online}
+
+% ═══════ TEACHING ═════════════════════════════════════════════
+\section{Teaching and Supervision}
+
+\textbf{\color{burgundy}Teaching Assistant}, Utrecht University School of Economics
+
+\confline
+{2023 -- 2024}
+{\color{black}Multinational Corporate Finance (Master's level)}
+{Utrecht, the Netherlands}
+{Tutorial Teaching}
+
+\vspace{4pt}
+
+\textbf{\color{burgundy}Master's Thesis Supervision}, Utrecht University School of Economics
+
+{\small Supervised three students in 2026 and one student in 2025 on topics including board gender diversity, green-investor sentiment, and AI-sector valuations.}
+
+% ═══════ WORK EXPERIENCE ══════════════════════════════════════
+\section{Work Experience}
+
+\cventry
+{Research Assistant}
+{Laboratory of Experimental Economics, SWUFE}
+{Chengdu, China}
+{Nov 2021 -- Apr 2023}
+{Led a research-assistant team testing the effects of neurotransmitters on decision-making. Drafted procedural protocols for economics experiments involving pharmacological interventions and executed a pilot study (2.5-hour sessions, $N > 100$) using medicinal and placebo treatments.}
+
+\cventry
+{Manager and Analyst}
+{Eurasia Institute}
+{Chengdu, China}
+{Apr 2021 -- Mar 2022}
+{Conducted research in industrial organization and artificial intelligence to support institutional strategic planning. Co-organized two international forums on politics and economics and assisted in the development of international education initiatives.}
+
+% ═══════ SKILLS ═══════════════════════════════════════════════
+\section{Skills and Languages}
+
+\textbf{\color{burgundy}Software:}
+Stata, R, oTree, Python, HTML, CSS, JavaScript, Latex/Overleaf.
+
+\textbf{\color{burgundy}Languages:}
+English (fluent); Mandarin Chinese (native); Dutch (beginner).
+
+\end{document}
